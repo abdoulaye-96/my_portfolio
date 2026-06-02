@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import {
   SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss,
   SiDjango, SiNodedotjs, SiFastapi, SiSpring,
-  SiPostgresql, SiMongodb,
+  SiPostgresql, SiMongodb, SiMysql,
   SiDocker, SiGitlab, SiLinux, SiKubernetes, SiNginx, SiGit,
   SiFigma,
 } from 'react-icons/si'
@@ -60,6 +60,7 @@ const categories: Category[] = [
     skills: [
       { name: 'PostgreSQL', icon: SiPostgresql, color: '#336791', level: 'Advanced' },
       { name: 'MongoDB', icon: SiMongodb, color: '#47A248', level: 'Advanced' },
+      { name: 'MySQL', icon: SiMysql, color: '#4479A1', level: 'Advanced' },
     ],
   },
   {

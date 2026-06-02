@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Code2, Server, Brain, GraduationCap, MapPin } from 'lucide-react'
 
 const stats = [
-  { value: '2+', label: 'Years Experience' },
+  { value: '1+', label: 'Years Experience' },
   { value: '10+', label: 'Projects Shipped' },
   { value: '20+', label: 'Technologies' },
   { value: '100%', label: 'Remote Ready' },

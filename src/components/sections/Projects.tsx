@@ -2,7 +2,8 @@
 
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react'
+import { ExternalLink, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react'
+import { FaGithub } from 'react-icons/fa'
 
 type ProjectStatus = 'Live' | 'In Progress' | 'Design'
 
@@ -131,35 +132,38 @@ const projects: Project[] = [
     github: 'https://github.com/abdoulaye-96/gestionHotel',
   },
   {
-    id: 'yougo',
-    title: 'YouGo',
-    tagline: 'Localised ride-hailing platform for West Africa',
-    type: 'UI/UX Design · Product Architecture',
-    status: 'Design',
-    tags: ['Transportation', 'Figma', 'Product Design', 'Mobile-First'],
+    id: 'easyservice',
+    title: 'EasyService',
+    tagline: 'Full-stack service management platform',
+    type: 'Full Stack Web Application — MERN',
+    status: 'Live',
+    tags: ['Service Management', 'React', 'Node.js', 'MongoDB'],
     gradient: 'from-orange-600 to-amber-600',
     problem:
-      'West African urban transport lacks reliable, transparent, tech-enabled solutions. Existing platforms (Uber, Yango) don\'t adequately account for local infrastructure, connectivity, and payment realities.',
+      'Service providers and freelancers lacked a centralized platform to manage service offerings, track client requests, and handle the full lifecycle of a service engagement.',
     solution:
-      'A mobile-first transportation platform designed specifically for the West African market — offline-capable flows, local payment integrations, and an adaptive UX for diverse device constraints.',
+      'A full-featured service management platform built with the MERN stack — enabling service providers to list services, manage incoming requests, and track job status from a clean dashboard.',
     features: [
-      'Driver and passenger onboarding with document verification',
-      'Real-time map integration with low-bandwidth fallback',
-      'Multi-modal local payment support',
-      'Driver rating and feedback system',
-      'Full Figma design system with component library',
+      'Service listing and categorization',
+      'Client request submission and tracking',
+      'Provider dashboard with job pipeline',
+      'Status management (pending, in progress, completed)',
+      'REST API with Express.js and MongoDB',
     ],
     stack: [
-      { name: 'Figma', color: '#F24E1E' },
-      { name: 'React Native', color: '#61DAFB' },
+      { name: 'React', color: '#61DAFB' },
+      { name: 'Node.js', color: '#339933' },
+      { name: 'Express.js', color: '#9CA3AF' },
+      { name: 'MongoDB', color: '#47A248' },
     ],
     challenges: [
-      'UX patterns adapted for users with limited smartphone experience',
-      'Designing for low-bandwidth and intermittent connectivity',
-      'Accessible design that scales across device classes',
+      'Designing a clear state machine for service request lifecycles',
+      'Building an intuitive dashboard that works for both providers and clients',
+      'Handling real-time status updates across user roles',
     ],
     outcome:
-      'Complete product design with full user flows, a Figma component system, and mobile-first wireframes — ready for the development phase.',
+      'A complete, production-ready service management platform developed during internship at Bakeli — demonstrating full MERN stack proficiency and real-world product delivery.',
+    github: 'https://github.com/abdoulaye-96',
   },
 ]
 
@@ -206,7 +210,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 className="p-2 text-slate-600 hover:text-white transition-colors"
                 aria-label="GitHub"
               >
-                <Github size={17} />
+                <FaGithub size={17} />
               </a>
             )}
             {project.demo && (
@@ -344,6 +348,30 @@ export default function Projects() {
             <ProjectCard key={p.id} project={p} index={i} />
           ))}
         </div>
+
+        {/* GitHub CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-slate-500 text-sm mb-4">
+            These are just the highlights — I have more projects on GitHub.
+          </p>
+          <motion.a
+            href="https://github.com/abdoulaye-96"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            className="inline-flex items-center gap-2.5 px-6 py-3 border border-slate-700 hover:border-cyan-500/50 text-slate-400 hover:text-cyan-400 rounded-xl transition-all duration-200 text-sm font-medium"
+          >
+            <FaGithub size={18} />
+            See all my projects on GitHub
+            <ArrowRight size={15} />
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   )
