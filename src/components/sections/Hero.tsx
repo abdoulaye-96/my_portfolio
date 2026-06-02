@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, MapPin, Download } from 'lucide-react'
+import { ArrowRight, MapPin, FileText } from 'lucide-react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import {
   SiReact,
@@ -146,13 +146,12 @@ export default function Hero() {
             href="/cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            download="Abdoulaye_Sene_CV.pdf"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
             className="flex items-center gap-2 px-7 py-3.5 border border-slate-700 hover:border-cyan-500/40 text-slate-400 hover:text-cyan-400 font-medium rounded-xl transition-all duration-200 text-base"
           >
-            <Download size={17} />
-            Download CV
+            <FileText size={17} />
+            View CV
           </motion.a>
         </motion.div>
 
