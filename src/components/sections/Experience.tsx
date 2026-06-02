@@ -76,6 +76,45 @@ const education = [
   },
 ]
 
+const hackathons = [
+  {
+    title: 'SENGAM Hackathon',
+    organizer: 'SENGAM · GoMyCode, Dakar',
+    period: 'April 2024',
+    note: null,
+  },
+  {
+    title: 'Dakar Innovation Days Hackathon',
+    organizer: 'City of Dakar',
+    period: 'July 2024',
+    note: null,
+  },
+  {
+    title: 'Blockchain Hackathon — E-Voting System',
+    organizer: 'Bold African Movement (BAM)',
+    period: 'October 2024',
+    note: 'Built a decentralized e-voting system addressing electoral transparency.',
+  },
+  {
+    title: 'Online Hackathon',
+    organizer: 'Bakeli (Volkeno), Senegal',
+    period: null,
+    note: null,
+  },
+  {
+    title: 'Banlieue Smart Days',
+    organizer: 'Banlieue Smart Genius · Yeumbeul',
+    period: null,
+    note: null,
+  },
+  {
+    title: 'Online Hackathon — "YourPast Hunts You" Game',
+    organizer: 'Online',
+    period: null,
+    note: 'Built an interactive web game from scratch during the competition.',
+  },
+]
+
 export default function Experience() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
@@ -193,20 +232,29 @@ export default function Experience() {
                   <Trophy size={18} className="text-yellow-500" />
                   Hackathons & Competitions
                 </h3>
-                <div className="card p-5 hover:border-yellow-500/20 transition-colors">
-                  <h4 className="font-semibold text-slate-200 text-sm">
-                    Blockchain Hackathon — E-Voting System
-                  </h4>
-                  <p className="text-yellow-500/80 text-xs mt-0.5">
-                    BAM (Bold African Movement) · 2024
-                  </p>
-                  <p className="text-slate-600 text-xs mt-1.5">
-                    Banlieue Smart Genius 4 — Yeumbeul · December 13–14, 2024
-                  </p>
-                  <p className="text-slate-500 text-xs mt-2 leading-relaxed">
-                    Designed and prototyped a decentralized e-voting system on blockchain — solving
-                    electoral transparency challenges.
-                  </p>
+                <div className="space-y-3">
+                  {hackathons.map((h, i) => (
+                    <motion.div
+                      key={h.title}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.4, delay: i * 0.08 }}
+                      className="card p-4 hover:border-yellow-500/20 transition-colors"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <h4 className="font-semibold text-slate-200 text-sm">{h.title}</h4>
+                          <p className="text-yellow-500/70 text-xs mt-0.5">{h.organizer}</p>
+                          {h.note && (
+                            <p className="text-slate-500 text-xs mt-1 leading-relaxed">{h.note}</p>
+                          )}
+                        </div>
+                        {h.period && (
+                          <span className="text-slate-600 text-xs shrink-0">{h.period}</span>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </div>
