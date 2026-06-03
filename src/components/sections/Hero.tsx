@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, MapPin, FileText } from 'lucide-react'
+import Image from 'next/image'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import {
   SiReact,
@@ -62,6 +63,23 @@ export default function Hero() {
         animate="show"
         className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
       >
+        {/* Profile photo */}
+        <motion.div variants={item} className="mb-7 flex justify-center">
+          <div className="relative w-24 h-24 sm:w-28 sm:h-28">
+            {/* Glow ring */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-500 to-violet-500 blur-md opacity-40" />
+            {/* Border ring */}
+            <div className="absolute inset-0 rounded-full border-2 border-cyan-500/50" />
+            <Image
+              src="/profile.jpeg"
+              alt="Abdoulaye Sène"
+              fill
+              className="rounded-full object-cover object-top"
+              priority
+            />
+          </div>
+        </motion.div>
+
         {/* Available badge */}
         <motion.div variants={item} className="mb-6">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-green-500/30 bg-green-500/10 text-green-400">
