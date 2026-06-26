@@ -88,16 +88,33 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="flex justify-center lg:justify-start"
             >
-              <div className="relative w-48 h-48 sm:w-56 sm:h-56">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/30 to-violet-500/30 blur-xl" />
-                <div className="absolute inset-0 rounded-2xl border border-cyan-500/20" />
+              <motion.div
+                className="relative w-48 h-48 sm:w-56 sm:h-56"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                whileHover={{ scale: 1.04 }}
+              >
+                {/* Pulsing glow */}
+                <motion.div
+                  className="absolute -inset-3 rounded-2xl bg-gradient-to-br from-cyan-500 to-violet-500 blur-xl"
+                  animate={{ opacity: [0.2, 0.5, 0.2], scale: [0.95, 1.05, 0.95] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                {/* Spinning gradient ring */}
+                <motion.div
+                  className="absolute -inset-[3px] rounded-2xl"
+                  style={{ background: 'conic-gradient(from 0deg, #06b6d4, #8b5cf6, #ec4899, #06b6d4)' }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                />
                 <Image
                   src="/profile.jpeg"
                   alt="Abdoulaye Sène"
                   fill
-                  className="rounded-2xl object-cover object-top"
+                  className="rounded-2xl object-cover object-top z-10"
+                  style={{ maskImage: 'linear-gradient(to bottom, black 55%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 55%, transparent 100%)' }}
                 />
-              </div>
+              </motion.div>
             </motion.div>
 
             {/* Stats grid */}

@@ -65,19 +65,34 @@ export default function Hero() {
       >
         {/* Profile photo */}
         <motion.div variants={item} className="mb-7 flex justify-center">
-          <div className="relative w-24 h-24 sm:w-28 sm:h-28">
-            {/* Glow ring */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-500 to-violet-500 blur-md opacity-40" />
-            {/* Border ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-cyan-500/50" />
+          <motion.div
+            className="relative w-24 h-24 sm:w-28 sm:h-28"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            {/* Pulsing glow */}
+            <motion.div
+              className="absolute -inset-2 rounded-full bg-gradient-to-br from-cyan-500 to-violet-500 blur-xl"
+              animate={{ opacity: [0.25, 0.55, 0.25], scale: [0.95, 1.1, 0.95] }}
+              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            {/* Spinning gradient ring */}
+            <motion.div
+              className="absolute -inset-[3px] rounded-full"
+              style={{ background: 'conic-gradient(from 0deg, #06b6d4, #8b5cf6, #ec4899, #06b6d4)' }}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+            />
+            {/* Mask to isolate ring */}
+            <div className="absolute inset-[2px] rounded-full bg-[#0B0B0F]" />
             <Image
               src="/profile.jpeg"
               alt="Abdoulaye Sène"
               fill
-              className="rounded-full object-cover object-top"
+              className="rounded-full object-cover object-top z-10"
               priority
             />
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Available badge */}
