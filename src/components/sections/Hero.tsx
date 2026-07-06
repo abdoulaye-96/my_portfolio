@@ -15,6 +15,7 @@ import {
   SiKubernetes,
   SiTypescript,
 } from 'react-icons/si'
+import type { IconComponent } from '@/lib/icon-types'
 
 const techStack = [
   { icon: SiReact, name: 'React', color: '#61DAFB' },
@@ -89,6 +90,7 @@ export default function Hero() {
               src="/profile.jpeg"
               alt="Abdoulaye Sène"
               fill
+              sizes="(min-width: 640px) 112px, 96px"
               className="rounded-full object-cover object-top z-10"
               priority
             />
@@ -198,7 +200,8 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.15, y: -2 }}
-            className="text-slate-600 hover:text-white transition-colors"
+            className="text-slate-500 hover:text-white transition-colors"
+            aria-label="GitHub"
           >
             <FaGithub size={22} />
           </motion.a>
@@ -207,7 +210,8 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.15, y: -2 }}
-            className="text-slate-600 hover:text-blue-400 transition-colors"
+            className="text-slate-500 hover:text-blue-400 transition-colors"
+            aria-label="LinkedIn"
           >
             <FaLinkedin size={22} />
           </motion.a>
@@ -215,7 +219,7 @@ export default function Hero() {
 
         {/* Tech stack strip */}
         <motion.div variants={item} className="flex flex-col items-center gap-5">
-          <p className="text-xs text-slate-700 uppercase tracking-widest font-medium">Core Stack</p>
+          <p className="text-xs text-slate-500 uppercase tracking-widest font-medium">Core Stack</p>
           <div className="flex flex-wrap items-center justify-center gap-7">
             {techStack.map(({ icon: Icon, name, color }) => (
               <TechIcon key={name} Icon={Icon} name={name} color={color} />
@@ -237,8 +241,7 @@ export default function Hero() {
 }
 
 interface TechIconProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  Icon: any
+  Icon: IconComponent
   name: string
   color: string
 }

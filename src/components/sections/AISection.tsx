@@ -143,7 +143,7 @@ export default function AISection() {
                         <div className={`flex-1 p-4 rounded-xl border ${cfg.borderColor} ${cfg.bgColor}`}>
                           <div className="flex items-center justify-between mb-2">
                             <div className="flex items-center gap-2">
-                              <span className="text-xs text-slate-600 font-mono">{item.phase}</span>
+                              <span className="text-xs text-slate-500 font-mono">{item.phase}</span>
                               <h4 className={`font-semibold text-sm ${cfg.color}`}>{item.title}</h4>
                             </div>
                             <span className={`text-xs ${cfg.color}`}>{cfg.label}</span>

@@ -100,13 +100,13 @@ export default function Contact() {
                 <Icon size={17} />
                 <div className="text-left">
                   <div className="font-medium">{label}</div>
-                  <div className="text-xs text-slate-700">{sub}</div>
+                  <div className="text-xs text-slate-500">{sub}</div>
                 </div>
               </motion.a>
             ))}
           </div>
 
-          <div className="flex items-center justify-center gap-1.5 text-slate-700 text-sm">
+          <div className="flex items-center justify-center gap-1.5 text-slate-500 text-sm">
             <MapPin size={13} />
             <span>Dakar, Senegal · Worldwide remote</span>
           </div>

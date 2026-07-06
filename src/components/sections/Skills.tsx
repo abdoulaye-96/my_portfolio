@@ -10,13 +10,13 @@ import {
   SiFigma,
 } from 'react-icons/si'
 import { Brain, Zap, GitBranch, Server } from 'lucide-react'
+import type { IconComponent } from '@/lib/icon-types'
 
 type SkillLevel = 'Advanced' | 'Intermediate' | 'Learning'
 
 interface Skill {
   name: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  icon: any
+  icon: IconComponent
   color: string
   level: SkillLevel
 }

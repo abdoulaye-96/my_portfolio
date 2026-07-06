@@ -160,7 +160,7 @@ export default function Experience() {
                       <div className="flex-1 card p-5 hover:border-cyan-500/20 transition-colors">
                         <h4 className="font-semibold text-slate-200 text-sm">{exp.company}</h4>
                         <p className="text-cyan-400 text-sm mt-0.5">{exp.role}</p>
-                        <div className="flex items-center gap-2 text-xs text-slate-600 mt-1 mb-3">
+                        <div className="flex items-center gap-2 text-xs text-slate-500 mt-1 mb-3">
                           <span>{exp.period}</span>
                           <span>·</span>
                           <span>{exp.location}</span>
@@ -210,7 +210,7 @@ export default function Experience() {
                         <div>
                           <h4 className="font-semibold text-slate-200 text-sm">{edu.degree}</h4>
                           <p className="text-slate-500 text-xs mt-0.5">{edu.institution}</p>
-                          <p className="text-slate-700 text-xs mt-1">{edu.period}</p>
+                          <p className="text-slate-500 text-xs mt-1">{edu.period}</p>
                         </div>
                         <span
                           className={`text-xs px-2 py-0.5 rounded-full shrink-0 ${
@@ -250,7 +250,7 @@ export default function Experience() {
                           )}
                         </div>
                         {h.period && (
-                          <span className="text-slate-600 text-xs shrink-0">{h.period}</span>
+                          <span className="text-slate-500 text-xs shrink-0">{h.period}</span>
                         )}
                       </div>
                     </motion.div>

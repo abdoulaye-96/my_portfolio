@@ -61,7 +61,6 @@ const projects: Project[] = [
     ],
     outcome:
       'Full product vision delivered: microservices architecture, admin panel, mobile-ready APIs, and a wallet service — all actively developed across multiple repositories.',
-    github: 'https://github.com/abdoulaye-96',
   },
   {
     id: 'edu-platform',
@@ -163,7 +162,7 @@ const projects: Project[] = [
     ],
     outcome:
       'A complete, production-ready service management platform developed during internship at Bakeli — demonstrating full MERN stack proficiency and real-world product delivery.',
-    github: 'https://github.com/abdoulaye-96',
+    github: 'https://github.com/Fatmata-Dev/EasyService-frontend',
   },
 ]
 
@@ -199,7 +198,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               </span>
             </div>
             <p className="text-slate-400 text-sm">{project.tagline}</p>
-            <p className="text-slate-600 text-xs mt-0.5 font-mono">{project.type}</p>
+            <p className="text-slate-500 text-xs mt-0.5 font-mono">{project.type}</p>
           </div>
           <div className="flex gap-1.5 shrink-0 ml-3">
             {project.github && (
@@ -207,7 +206,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-white transition-colors"
+                className="p-2 text-slate-500 hover:text-white transition-colors"
                 aria-label="GitHub"
               >
                 <FaGithub size={17} />
@@ -218,7 +217,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-slate-600 hover:text-cyan-400 transition-colors"
+                className="p-2 text-slate-500 hover:text-cyan-400 transition-colors"
                 aria-label="Live demo"
               >
                 <ExternalLink size={17} />
@@ -262,7 +261,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {/* Expand toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="flex items-center gap-1.5 text-sm text-slate-600 hover:text-cyan-400 transition-colors mt-auto"
+          className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-cyan-400 transition-colors mt-auto"
         >
           {open ? 'Hide' : 'View'} full case study
           {open ? <ChevronUp size={15} /> : <ChevronDown size={15} />}

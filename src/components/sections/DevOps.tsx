@@ -4,12 +4,12 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { SiDocker, SiGitlab, SiLinux, SiKubernetes, SiNginx } from 'react-icons/si'
 import { Terminal, GitBranch, Package, Server, Cpu, Code2 } from 'lucide-react'
+import type { IconComponent } from '@/lib/icon-types'
 
 type Level = 'Proficient' | 'Intermediate' | 'Learning'
 
 interface DevOpsItem {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  icon: any
+  icon: IconComponent
   name: string
   color: string
   level: Level
@@ -127,7 +127,7 @@ export default function DevOps() {
                   <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center">
                     <Icon className="w-5 h-5 text-orange-400/70" />
                   </div>
-                  <span className="text-xs text-slate-600">{label}</span>
+                  <span className="text-xs text-slate-500">{label}</span>
                 </div>
                 {i < pipelineSteps.length - 1 && (
                   <span className="text-slate-700 text-lg mb-4 shrink-0">→</span>

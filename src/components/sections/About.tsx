@@ -73,7 +73,7 @@ export default function About() {
               ))}
             </div>
 
-            <div className="mt-6 flex items-center gap-2 text-slate-600 text-sm">
+            <div className="mt-6 flex items-center gap-2 text-slate-500 text-sm">
               <MapPin size={13} />
               <span>Dakar, Senegal · Open to worldwide remote positions</span>
             </div>
@@ -111,6 +111,7 @@ export default function About() {
                   src="/profile.jpeg"
                   alt="Abdoulaye Sène"
                   fill
+                  sizes="(min-width: 640px) 224px, 192px"
                   className="rounded-2xl object-cover object-top z-10"
                   style={{ maskImage: 'linear-gradient(to bottom, black 55%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to bottom, black 55%, transparent 100%)' }}
                 />
@@ -139,9 +140,9 @@ export default function About() {
                 className="card col-span-2 p-5 flex items-center justify-between gap-4 hover:border-slate-600/50 transition-colors"
               >
                 <div>
-                  <p className="text-xs text-slate-600 mb-0.5">GitHub Profile</p>
+                  <p className="text-xs text-slate-500 mb-0.5">GitHub Profile</p>
                   <p className="text-slate-200 font-medium text-sm">@abdoulaye-96</p>
-                  <p className="text-xs text-slate-600 mt-1">Open source contributions & personal projects</p>
+                  <p className="text-xs text-slate-500 mt-1">Open source contributions & personal projects</p>
                 </div>
                 <a
                   href="https://github.com/abdoulaye-96"

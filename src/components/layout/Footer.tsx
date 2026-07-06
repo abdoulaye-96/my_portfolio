@@ -8,10 +8,10 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2">
             <span className="text-lg font-bold gradient-text">AS</span>
-            <span className="text-slate-600 text-sm font-medium">Abdoulaye Sène</span>
+            <span className="text-slate-500 text-sm font-medium">Abdoulaye Sène</span>
           </div>
 
-          <p className="text-slate-700 text-sm text-center">
+          <p className="text-slate-500 text-sm text-center">
             Designed & built by Abdoulaye Sène · {new Date().getFullYear()}
           </p>
 
@@ -20,7 +20,7 @@ export default function Footer() {
               href="https://github.com/abdoulaye-96"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-white transition-colors"
+              className="text-slate-500 hover:text-white transition-colors"
               aria-label="GitHub"
             >
               <FaGithub size={18} />
@@ -29,14 +29,14 @@ export default function Footer() {
               href="https://www.linkedin.com/in/abdoulaye-sene-707801203/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-600 hover:text-blue-400 transition-colors"
+              className="text-slate-500 hover:text-blue-400 transition-colors"
               aria-label="LinkedIn"
             >
               <FaLinkedin size={18} />
             </a>
             <a
               href="mailto:seneabdoulaye124@gmail.com"
-              className="text-slate-600 hover:text-cyan-400 transition-colors"
+              className="text-slate-500 hover:text-cyan-400 transition-colors"
               aria-label="Email"
             >
               <Mail size={18} />
